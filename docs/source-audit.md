@@ -1,6 +1,6 @@
 # 47-prefecture source audit
 
-Audit date: 2026-08-27  
+Audit date: 2026-08-27
 National index: https://www.npa.go.jp/toukei/seianki/hanzaiopendatalink.html
 
 ## Coverage
