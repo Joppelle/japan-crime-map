@@ -254,7 +254,7 @@ let totalRawRows = 0;
 for (const prefecture of selectedPrefectures) {
   console.log(`Discovering ${prefecture.name}`);
   const { resourcePageUrl, resources } = await discoverResources(prefecture);
-  for (const { category, fileSlug, resourceUrl } of resources) {
+  for (const { category, resourceUrl } of resources) {
     console.log(`Fetching ${prefecture.name} ${category}`);
     const bytes = await fetchBytes(resourceUrl);
     const [encoding, csv] = decodeCsv(bytes);
@@ -291,7 +291,6 @@ for (const prefecture of selectedPrefectures) {
       rawRows.push({
         prefecture,
         category,
-        fileSlug,
         resourceUrl,
         sourceFile,
         row,
