@@ -15,8 +15,21 @@ row-level reported incidents, usually located by municipality and town/chome. Ka
 published coordinates but removed them in favor of town-level geography.
 
 The strongest initial adapters are Tokyo, Kanagawa, Osaka, Saitama, Fukuoka, Kyoto, Hyogo, and
-Okayama. Tokyo is implemented first because one stable page exposes annual links for all seven
-categories.
+Okayama. The application currently ingests Tokyo, Kanagawa, Osaka, Fukuoka, and Okinawa.
+
+## Implemented sources
+
+| Prefecture | Discovery | Current verified publication |
+| --- | --- | --- |
+| Tokyo | Annual CSV links on one stable police page | 2025, seven CSV resources |
+| Kanagawa | Annual CSV links on one stable police page | 2025, seven CSV resources |
+| Osaka | Reporting-year page discovered from the police index | 2025, seven CSV resources |
+| Fukuoka | CKAN package search in the official BODIK catalog | Dataset `400009_hanzair_r7`, seven CSV resources |
+| Okinawa | Reporting-year page discovered from the police statistics index | 2025, seven CSV resources |
+
+All 35 currently verified resources use the nationally standardized row-level headers. The live
+ingestion run detected CP932/Shift_JIS for each file and preserves each publisher page, resource
+URL, filename, row count, and SHA-256 digest.
 
 ## Source variation
 

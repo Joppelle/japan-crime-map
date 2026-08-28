@@ -84,7 +84,7 @@ export default function CrimeMap() {
     return dataset.incidents.filter((incident) => {
       if (!selectedCategories.includes(incident.category)) return false;
       if (!normalizedQuery) return true;
-      return `${incident.municipality} ${incident.town ?? ""} ${incident.policeStation ?? ""}`
+      return `${incident.prefecture} ${incident.municipality} ${incident.town ?? ""} ${incident.policeStation ?? ""}`
         .normalize("NFKC")
         .toLocaleLowerCase("ja")
         .includes(normalizedQuery);
@@ -110,9 +110,9 @@ export default function CrimeMap() {
     const map = new maplibregl.Map({
       container: mapContainer.current,
       style: MAP_STYLE,
-      center: [139.6917, 35.6895],
-      zoom: 9.2,
-      minZoom: 5,
+      center: [134.5, 33.8],
+      zoom: 4.2,
+      minZoom: 3.5,
       maxZoom: 18,
       attributionControl: false,
     });
@@ -265,11 +265,12 @@ export default function CrimeMap() {
           {panelOpen && (
             <div className="sidebar-content">
               <div className="intro">
-                <p className="eyebrow">東京都 · Tokyo MVP</p>
+                <p className="eyebrow">Five prefectures · 5都府県</p>
                 <h2>Reported property crime, mapped with context.</h2>
                 <p>
-                  Explore seven theft categories published by prefectural police. Locations are
-                  privacy-conscious representative points, not exact incident coordinates.
+                  Explore seven theft categories from Tokyo, Kanagawa, Osaka, Fukuoka, and Okinawa.
+                  Locations are privacy-conscious representative points, not exact incident
+                  coordinates.
                 </p>
               </div>
 
@@ -283,7 +284,7 @@ export default function CrimeMap() {
                   <input
                     value={query}
                     onChange={(event) => setQuery(event.target.value)}
-                    placeholder="e.g. Shinjuku / 新宿"
+                    placeholder="e.g. Osaka / 大阪"
                   />
                 </div>
               </label>
@@ -372,7 +373,10 @@ export default function CrimeMap() {
             </span>
             <span>published records</span>
             <i />
-            <span>Tokyo · {dataset?.metadata.reportingYear ?? "—"}</span>
+            <span>
+              {dataset?.metadata.prefectures.length ?? "—"} prefectures ·{" "}
+              {dataset?.metadata.reportingYear ?? "—"}
+            </span>
           </div>
 
           {!dataset && !dataError && <div className="loading-card">Preparing the atlas…</div>}

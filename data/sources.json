@@ -14,8 +14,8 @@
     {"code":"10","name":"群馬県","landingUrl":"https://www.police.pref.gunma.jp/site/police/28701.html","adapter":"pending"},
     {"code":"11","name":"埼玉県","landingUrl":"https://www.police.pref.saitama.lg.jp/c0011/kurashi/0pendata2019/opendate-2019.html","adapter":"pending"},
     {"code":"12","name":"千葉県","landingUrl":"https://www.police.pref.chiba.jp/seisoka/safe-life_publicspace-statistics_00002.html","adapter":"pending"},
-    {"code":"13","name":"東京都","landingUrl":"https://www.keishicho.metro.tokyo.lg.jp/about_mpd/jokyo_tokei/jokyo/hanzaihasseijyouhou.html","adapter":"tokyo-single-page"},
-    {"code":"14","name":"神奈川県","landingUrl":"https://www.police.pref.kanagawa.jp/tokei/hanzai_tokei/mesd0145.html","adapter":"pending"},
+    {"code":"13","name":"東京都","landingUrl":"https://www.keishicho.metro.tokyo.lg.jp/about_mpd/jokyo_tokei/jokyo/hanzaihasseijyouhou.html","adapter":"single-page"},
+    {"code":"14","name":"神奈川県","landingUrl":"https://www.police.pref.kanagawa.jp/tokei/hanzai_tokei/mesd0145.html","adapter":"single-page"},
     {"code":"15","name":"新潟県","landingUrl":"https://www.pref.niigata.lg.jp/site/kenkei/anzen-ansin-open-open.html","adapter":"pending"},
     {"code":"16","name":"富山県","landingUrl":"https://opendata.pref.toyama.jp/dataset/settou2024","adapter":"pending"},
     {"code":"17","name":"石川県","landingUrl":"https://www2.police.pref.ishikawa.lg.jp/security/security24/","adapter":"pending"},
@@ -28,7 +28,7 @@
     {"code":"24","name":"三重県","landingUrl":"http://www.police.pref.mie.jp/safety_info/op_data_index.html","adapter":"pending"},
     {"code":"25","name":"滋賀県","landingUrl":"https://www.pref.shiga.lg.jp/police/seikatu/seikatu/anmachi/306453.html","adapter":"pending"},
     {"code":"26","name":"京都府","landingUrl":"https://data.bodik.jp/organization/260002?q=犯罪データ","adapter":"pending"},
-    {"code":"27","name":"大阪府","landingUrl":"https://www.police.pref.osaka.lg.jp/seikatsu/9290.html","adapter":"pending"},
+    {"code":"27","name":"大阪府","landingUrl":"https://www.police.pref.osaka.lg.jp/seikatsu/9290.html","adapter":"per-year-index"},
     {"code":"28","name":"兵庫県","landingUrl":"https://web.pref.hyogo.lg.jp/kk26/johoseisaku/opendata.html","adapter":"pending"},
     {"code":"29","name":"奈良県","landingUrl":"http://www.police.pref.nara.jp/0000003672.html","adapter":"pending"},
     {"code":"30","name":"和歌山県","landingUrl":"https://www.police.pref.wakayama.lg.jp/04_toukei/index.html","adapter":"pending"},
@@ -41,13 +41,13 @@
     {"code":"37","name":"香川県","landingUrl":"https://opendata.pref.kagawa.lg.jp/dataset/bunya/bosai/","adapter":"pending"},
     {"code":"38","name":"愛媛県","landingUrl":"https://www.police.pref.ehime.jp/seiki/mokuji/fusegou.html","adapter":"pending"},
     {"code":"39","name":"高知県","landingUrl":"https://www.police.pref.kochi.lg.jp/docs/2023111400109/","adapter":"pending"},
-    {"code":"40","name":"福岡県","landingUrl":"https://www.police.pref.fukuoka.jp/tokei/index.html","adapter":"pending"},
+    {"code":"40","name":"福岡県","landingUrl":"https://odcs.bodik.jp/400009/","adapter":"ckan"},
     {"code":"41","name":"佐賀県","landingUrl":"https://data.bodik.jp/dataset/410004_hanzaijyouhou","adapter":"pending"},
     {"code":"42","name":"長崎県","landingUrl":"https://www.police.pref.nagasaki.jp/police/kurashi/kurashi-tokei/hanzainincti-top/","adapter":"pending"},
     {"code":"43","name":"熊本県","landingUrl":"https://www.pref.kumamoto.jp/soshiki/211/82808.html","adapter":"pending"},
     {"code":"44","name":"大分県","landingUrl":"http://www.pref.oita.jp/site/keisatu/seianki-toukei123.html","adapter":"pending"},
     {"code":"45","name":"宮崎県","landingUrl":"https://data.bodik.jp/dataset/450006_1069","adapter":"pending"},
     {"code":"46","name":"鹿児島県","landingUrl":"https://data.bodik.jp/dataset/460001_hanzaihassei_2024","adapter":"pending"},
-    {"code":"47","name":"沖縄県","landingUrl":"https://www.police.pref.okinawa.jp/category/bunya/tokei","adapter":"pending"}
+    {"code":"47","name":"沖縄県","landingUrl":"https://www.police.pref.okinawa.jp/category/bunya/tokei","adapter":"per-year-index"}
   ]
 }

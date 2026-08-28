@@ -3,9 +3,9 @@
 A privacy-conscious, Google Maps–style explorer for crime incident open data published by Japan's
 47 prefectural police organizations.
 
-The current MVP maps Tokyo's seven nationally standardized property-crime categories. It also
-includes a 47-prefecture source inventory and an autonomous Devin API runner that expands ingestion
-coverage one verified adapter at a time.
+The current MVP maps seven nationally standardized property-crime categories from Tokyo, Kanagawa,
+Osaka, Fukuoka, and Okinawa. It also includes a 47-prefecture source inventory and an autonomous
+Devin API runner that expands ingestion coverage one verified adapter at a time.
 
 ## What the map means
 
@@ -41,10 +41,16 @@ Validate a change:
 npm run check
 ```
 
-## Refresh Tokyo data
+## Refresh map data
 
 The committed browser dataset is a deterministic, bounded sample suitable for a static deployment.
-Regenerate it from the current Tokyo Metropolitan Police annual CSVs:
+Regenerate all five prefectures from their current official annual CSVs:
+
+```bash
+npm run data:all
+```
+
+Refresh only Tokyo while developing the shared adapter:
 
 ```bash
 npm run data:tokyo
@@ -55,12 +61,14 @@ Configuration:
 | Variable | Default | Meaning |
 | --- | ---: | --- |
 | `REPORTING_YEAR` | `2025` | Annual source page group to fetch |
+| `PREFECTURES` | all five | Comma-separated Japanese names, slugs, or prefecture codes |
 | `MAX_PER_CATEGORY` | `1200` | Evenly sample each category; use `0` for every row |
 | `PRIVACY_THRESHOLD` | `5` | Minimum records before publishing a town/chome label |
 | `OUTPUT_PATH` | `public/data/incidents.json` | Generated dataset destination |
 
-The adapter decodes CP932/Shift_JIS, validates source shape, normalizes Japanese address text, joins
-to representative coordinates, applies the privacy fallback, and retains source provenance.
+The adapters discover links from publisher pages or the Fukuoka CKAN catalog, detect UTF-8 versus
+CP932/Shift_JIS, validate source shape, normalize Japanese address text, join representative
+coordinates, apply the privacy fallback, and retain source provenance.
 
 ## Autonomous Devin workflow
 
@@ -123,6 +131,10 @@ launch, configure a tile provider whose terms and capacity match the expected us
 
 - [National Police Agency crime open-data index](https://www.npa.go.jp/toukei/seianki/hanzaiopendatalink.html)
 - [Tokyo Metropolitan Police annual crime occurrence data](https://www.keishicho.metro.tokyo.lg.jp/about_mpd/jokyo_tokei/jokyo/hanzaihasseijyouhou.html)
+- [Kanagawa Prefectural Police crime open data](https://www.police.pref.kanagawa.jp/tokei/hanzai_tokei/mesd0145.html)
+- [Osaka Prefectural Police crime open data](https://www.police.pref.osaka.lg.jp/seikatsu/9290.html)
+- [Fukuoka Prefecture open-data catalog](https://odcs.bodik.jp/400009/)
+- [Okinawa Prefectural Police statistics](https://www.police.pref.okinawa.jp/category/bunya/tokei)
 - [Geolonia Japanese Addresses v2](https://github.com/geolonia/japanese-addresses-v2)
 - Map tiles and cartography © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright)
 
