@@ -9,7 +9,8 @@
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm run data:validate && npm run build",
-    "data:tokyo": "node scripts/ingest-tokyo.mjs",
+    "data:all": "node scripts/ingest.mjs",
+    "data:tokyo": "PREFECTURES=東京都 node scripts/ingest.mjs",
     "data:validate": "node scripts/validate-data.mjs",
     "agent": "python automation/run.py"
   },

@@ -33,6 +33,7 @@ export type IncidentDataset = {
   metadata: {
     generatedAt: string;
     reportingYear: number;
+    prefectures: string[];
     sourceName: string;
     sourceUrl: string;
     addressSource: string;
@@ -42,7 +43,10 @@ export type IncidentDataset = {
     sampleLimitPerCategory: number | null;
     privacyThreshold: number;
     sources: {
+      prefecture: string;
       category: CrimeCategory;
+      landingUrl: string;
+      resourcePageUrl: string;
       resourceUrl: string;
       fileName: string;
       sha256: string;
