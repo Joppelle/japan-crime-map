@@ -1,0 +1,29 @@
+name: Devin ingestion agent
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+    inputs:
+      prefecture:
+        description: Optional Japanese prefecture name
+        required: false
+        type: string
+
+concurrency:
+  group: devin-crime-ingestion
+  cancel-in-progress: false
+
+jobs:
+  improve-ingestion:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start or continue ingestion work
+        env:
+          DEVIN_API_KEY: ${{ secrets.DEVIN_API_KEY }}
+          DEVIN_ORG_ID: ${{ vars.DEVIN_ORG_ID }}
+          PREFECTURE: ${{ inputs.prefecture }}
+        run: python automation/run.py
